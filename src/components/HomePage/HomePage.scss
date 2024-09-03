@@ -1,0 +1,26 @@
+.HomePage-container{
+    height: 100%;
+    width: 100%;
+    .carousel-item img {
+        height: 800px; // Set a fixed height for carousel images
+        object-fit: cover; // Maintain aspect ratio and cover the container
+    }
+
+    .card-img-top {
+        height: 400px; // Set a fixed height for category card images
+        object-fit: cover; // Ensure the image covers the entire area
+    }
+}
+.videoHomePage{
+    height: 100%;
+    width: 100%;
+}
+.custom-hover {
+    transition: transform 0.3s ease, opacity 0.3s ease; // Smooth transition
+  
+    &:hover {
+      transform: scale(1.1); // Zoom the image
+      opacity: 0.8; // Reduce opacity
+    }
+  }
+  

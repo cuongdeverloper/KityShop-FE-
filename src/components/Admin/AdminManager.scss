@@ -1,0 +1,60 @@
+.Admin-container {
+    display: flex;
+    height: 100vh; /* Set container height to full viewport height */
+    
+}
+
+.Admin-content {
+    flex: 1; /* Let content area fill the remaining space */
+     /* Enable vertical scrolling if content overflows */
+    max-width: 100%; /* Ensure content area takes full width */
+    position: relative;
+    .Header-container{
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+}
+
+.ManageUser-container {
+    height: 100%; /* Make nested container full height */
+}
+
+.Manageuser-content {
+    max-height: 100%; /* Ensure content doesn't overflow */
+}
+
+.TableUserPagination-paginate {
+    display: flex;
+    justify-content: center;
+}
+
+.reactIconFa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -12px;
+}
+
+.pro-sidebar-header {
+    .pro-menu.inner-submenu-arrows {
+        .pro-menu-item {
+            .pro-inner-item {
+                .suffix-wrapper {
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}
+
+.Admin-SideBar {
+    .pro-sidebar {
+        .pro-sidebar-inner {
+            .pro-sidebar-layout {
+                background-color: rgba(100, 101, 119, 0.2);
+            }
+        }
+    }
+}

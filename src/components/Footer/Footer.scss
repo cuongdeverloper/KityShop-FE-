@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.Footer-container {
+    background: #454a4c!important;
+    color: #e4e4e4 !important    ;
+    .container {
+
+        .col-12 {
+            width: 100%;
+            
+        }
+    }
+}
+
+.footer-logo {
+     
+        height: 80px;
+    img{
+        max-height: 100%;
+    }
+}
+.footer-text{
+    a{
+        text-decoration: none;
+        color: #00ffff !important;
+        font-weight: 500;
+    }
+}

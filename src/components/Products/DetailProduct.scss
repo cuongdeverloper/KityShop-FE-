@@ -1,0 +1,49 @@
+
+body{
+    font-family: mulish, raleway, helvetica neue, Arial, noto sans, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol, noto color emoji !important;
+}
+.DetailProduct-container{
+    margin-bottom: 50px;
+}
+.DetailProduct-thumbnails {
+    .DetailProduct-thumbnail {
+        cursor: pointer;
+        img {
+            border: 2px solid transparent;
+            transition: border 0.3s;
+        }
+        &:hover img {
+            border: 2px solid #007bff; // Change this to your desired hover border color
+        }
+    }
+}
+.DetailProduct-thumbnails{
+    display: flex;
+    flex-direction: row;
+}
+.description-product{
+    font-size: 30px;
+    svg{
+        color: red;
+        height: 30px;
+        width: 30px;
+    }
+}
+.product-related{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background: #fff;
+    border: 2px solid rgba(174, 174, 174, 0.082);
+}
+.DetailProduct-reviewProductText{
+    table{
+        --bs-table-bg: none;
+        tr {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
