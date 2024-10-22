@@ -5,7 +5,7 @@ import { doLogout } from '../redux/action/userAction';
 import { isTokenExpired } from './decodeJWT';
 
 const instance = axios.create({
-    baseURL: 'http://localhost:3000/',
+    baseURL: 'https://kittyshop-be.onrender.com/',
     withCredentials: true,
 });
 
