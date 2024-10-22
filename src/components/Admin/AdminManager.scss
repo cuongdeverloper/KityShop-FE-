@@ -1,28 +1,43 @@
 .Admin-container {
     display: flex;
-    height: 100vh; /* Set container height to full viewport height */
-    
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+.Admin-SideBar {
+    flex-shrink: 0; /* Ensure sidebar doesn't shrink */
+    .pro-sidebar {
+        .pro-sidebar-inner {
+            .pro-sidebar-layout {
+                background-color: rgba(100, 101, 119, 0.2);
+            }
+        }
+    }
 }
 
 .Admin-content {
-    flex: 1; /* Let content area fill the remaining space */
-     /* Enable vertical scrolling if content overflows */
-    max-width: 100%; /* Ensure content area takes full width */
+    flex: 1; /* Allow content to take up remaining space */
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
     position: relative;
-    .Header-container{
-        position: absolute;
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+
+    .Header-container {
+        position: sticky;
         top: 0;
-        right: 0;
-        left: 0;
+        z-index: 1;
     }
 }
 
 .ManageUser-container {
-    height: 100%; /* Make nested container full height */
+    flex: 1;
+    overflow-y: auto; /* Ensure content doesn't overflow */
 }
 
 .Manageuser-content {
-    max-height: 100%; /* Ensure content doesn't overflow */
+    flex: 1;
+    overflow-y: auto; /* Allow content to scroll */
 }
 
 .TableUserPagination-paginate {
@@ -35,26 +50,4 @@
     justify-content: center;
     align-items: center;
     margin-top: -12px;
-}
-
-.pro-sidebar-header {
-    .pro-menu.inner-submenu-arrows {
-        .pro-menu-item {
-            .pro-inner-item {
-                .suffix-wrapper {
-                    font-size: 25px;
-                }
-            }
-        }
-    }
-}
-
-.Admin-SideBar {
-    .pro-sidebar {
-        .pro-sidebar-inner {
-            .pro-sidebar-layout {
-                background-color: rgba(100, 101, 119, 0.2);
-            }
-        }
-    }
 }

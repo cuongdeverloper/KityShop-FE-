@@ -28,9 +28,9 @@ const MenuShop = () => {
                     id="shirt-dropdown" 
                     show={openDropdown === 'shirt-dropdown'}
                 >
-                    <NavDropdown.Item as={NavLink} to='/shop/product/Shirt'>Shirt</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to='#'>Áo sơ mi</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to='#'>Áo ba lỗ</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/shop/product/shirt'>Shirt</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/shop/product/ao-so-mi'>Áo sơ mi</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/shop/product/ao-ba-lo'>Áo ba lỗ</NavDropdown.Item>
                 </NavDropdown>
             </div>
 
@@ -45,9 +45,9 @@ const MenuShop = () => {
                     id="jacket-dropdown" 
                     show={openDropdown === 'jacket-dropdown'}
                 >
-                    <NavDropdown.Item as={NavLink} to='#'>Áo khoác</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to='#'>Áo len</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to='#'>Áo sweeter</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/shop/product/ao-khoac'>Áo khoác</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/shop/product/ao-len'>Áo len</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/shop/product/ao-sweater'>Áo sweater</NavDropdown.Item>
                 </NavDropdown>
             </div>
 
@@ -62,11 +62,11 @@ const MenuShop = () => {
                     id="sports-dropdown" 
                     show={openDropdown === 'sports-dropdown'}
                 >
-                    <NavDropdown.Item as={NavLink} to='#'>Áo bóng đá nam</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to='#'>Áo bóng đá nữ</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to='#'>Áo giữ nhiệt</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to='#'>Áo mùa hè</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to='#'>Áo khoác giữ nhiệt</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/shop/product/ao-bong-da-nam'>Áo bóng đá nam</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/shop/product/ao-bong-da-nu'>Áo bóng đá nữ</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/shop/product/ao-giu-nhiet'>Áo giữ nhiệt</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/shop/product/ao-mua-he'>Áo mùa hè</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/shop/product/ao-khoac-giu-nhiet'>Áo khoác giữ nhiệt</NavDropdown.Item>
                 </NavDropdown>
             </div>
 
@@ -81,11 +81,11 @@ const MenuShop = () => {
                     id="pants-dropdown" 
                     show={openDropdown === 'pants-dropdown'}
                 >
-                    <NavDropdown.Item as={NavLink} to='#'>Quần jean</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to='#'>Quần short</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to='#'>Quần thể thao</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to='#'>Quần bãi biển</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to='#'>Quần kaki</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/shop/product/quan-jean'>Quần jean</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/shop/product/quan-short'>Quần short</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/shop/product/quan-the-thao'>Quần thể thao</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/shop/product/quan-bai-bien'>Quần bãi biển</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/shop/product/quan-kaki'>Quần kaki</NavDropdown.Item>
                 </NavDropdown>
             </div>
 
@@ -100,10 +100,10 @@ const MenuShop = () => {
                     id="accessories-dropdown" 
                     show={openDropdown === 'accessories-dropdown'}
                 >
-                    <NavDropdown.Item as={NavLink} to='#'>Balo</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to='#'>Nón</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to='#'>Ví da</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to='#'>Đồng hồ</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/shop/product/balo'>Balo</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/shop/product/non'>Nón</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/shop/product/vi-da'>Ví da</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/shop/product/dong-ho'>Đồng hồ</NavDropdown.Item>
                 </NavDropdown>
             </div>
 
@@ -118,9 +118,9 @@ const MenuShop = () => {
                     id="shoes-dropdown" 
                     show={openDropdown === 'shoes-dropdown'}
                 >
-                    <NavDropdown.Item as={NavLink} to='#'>Giày thể thao</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to='#'>Giày đá bóng</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to='#'>Dép</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/shop/product/giay-the-thao'>Giày thể thao</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/shop/product/giay-da-bong'>Giày đá bóng</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to='/shop/product/dep'>Dép</NavDropdown.Item>
                 </NavDropdown>
             </div>
         </div>

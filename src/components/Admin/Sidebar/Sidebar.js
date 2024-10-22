@@ -78,12 +78,12 @@ const SideBar = (props) => {
                     </Menu>
                     <Menu iconShape="circle">
 
-                        <SubMenu icon={<FaRegLaughWink />} suffix={<span className="badge yellow">3</span>} title='Item3'>
+                        <SubMenu icon={<FaRegLaughWink />} suffix={<span className="badge yellow">3</span>} title='Admin Manage'>
                             <MenuItem>                            
-                                <Link to='manage-user' className='nav-link'>Item4</Link>
+                                <Link to='User' className='nav-link'>User</Link>
                             </MenuItem>
                             <MenuItem>
-                                <Link to='manage-quizz' className='nav-link'>Item5</Link>
+                                <Link to='Product' className='nav-link'>Product</Link>
                             </MenuItem>
                             <MenuItem>
                                 <Link to='manage-question' className='nav-link'>Item6</Link>

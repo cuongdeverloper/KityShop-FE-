@@ -8,9 +8,12 @@ const AdminManager = () => {
         <div className="Admin-SideBar">
             <SideBar  />
         </div>
-        <div className="Admin-content">
+        <div className="Admin-content" >
             <Header/>
-            <Outlet />
+            <div style={{marginTop:'80px'}}>
+                <Outlet />
+            </div>
+            
         </div>
 
     </div>

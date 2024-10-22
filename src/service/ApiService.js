@@ -41,10 +41,40 @@ const UpdateUserApi = (id, email, name, role, sex, phoneNumber) => {
         }
     });
 };
-
+const GetUserPaginateApi = (page, limit) => {
+    return axios.get('v1/api/user-pagination', {
+        params: {
+            page,
+            limit
+        }
+    });
+};
 const getUserApi = () => {
-    // Implementation of getUserApi function should be added here
+    return axios.get('v1/api/user')
 }
+
+const updateUserApi = (id, name, role, sex, phoneNumber,profileImage) => {
+    const data = {
+        id: id,
+        name: name,
+        role: role,
+        sex: sex,
+        phoneNumber: phoneNumber,
+        profileImage:profileImage
+    };
+
+    return axios.put(`v1/api/user`, data, {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+};
+const deleteUserApi = (id) => {
+    return axios.delete(`v1/api/user`, {
+        data: { id }
+    });
+};
+
 
 const getProductByCategoryApi = (category) => {
     return axios.get('v1/api/product-category', {
@@ -133,6 +163,54 @@ const searchHomepageByCategory = (category) => {
 const getAllCategoryHomePage = () =>{
     return axios.get('/v1/api/categoryHomepage')
 }
+const getListCategoriesApi = () =>{
+    return axios.get('/v1/api/product/categories')
+}
+
+const deleteProductByIdApi = (productId) => {
+    return axios.delete(`/v1/api/product/${productId}`)
+        .catch(error => {
+            console.error('Error deleting product:', error); // Debugging
+        });
+};
+
+const updateProductByProductId = async (productId, productDetails) => {
+    try {
+        const formData = new FormData();
+        
+        // Append non-file fields
+        formData.append('name', productDetails.name);
+        formData.append('description', productDetails.description);
+        formData.append('category', productDetails.category);
+        formData.append('price', productDetails.price);
+        formData.append('sizes', JSON.stringify(productDetails.sizes)); 
+        formData.append('colors', productDetails.colors.join(',')); 
+        formData.append('salesPercent', productDetails.salesPercent);
+
+        // Append file fields
+        if (productDetails.previewImages) {
+            productDetails.previewImages.forEach(file => {
+                formData.append('previewImages', file);
+            });
+        }
+        if (productDetails.productImages) {
+            productDetails.productImages.forEach(file => {
+                formData.append('productImages', file);
+            });
+        }
+
+        const response = await axios.put(`/v1/api/productById/${productId}`, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        });
+
+        return response.data;
+    } catch (error) {
+        console.error('Error updating product:', error);
+        throw error;
+    }
+};
 
 export {
     LoginApi,RegisterApi,
@@ -140,5 +218,6 @@ export {
     getUserApi,
     getProductByCategoryApi,
     getProductByProductId,loginWGoogle,decodeDataGoogle,getCartForUser,
-    addProductToCart,deleteDetailCart,searchHomepageByCategory,getAllCategoryHomePage
+    addProductToCart,deleteDetailCart,searchHomepageByCategory,getAllCategoryHomePage,
+    GetUserPaginateApi,updateUserApi,deleteUserApi,getListCategoriesApi,deleteProductByIdApi,updateProductByProductId
 }

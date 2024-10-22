@@ -44,13 +44,11 @@ const ProfileManage = () => {
 
         try {
             const res = await UpdateUserApi(id, email, fullname, role, gender, phoneNumber);
-            console.log(res);
             if (res.EC === 0) {
                 toast.success(res.MC);
                 dispatch(doLogin(res));
                 return;
             }
-            // Add any additional success handling, e.g., show a success message
         } catch (err) {
             console.error('Error updating user:', err);
             setError('Failed to update user information. Please try again.');
@@ -61,62 +59,80 @@ const ProfileManage = () => {
 
     return (
         <div className="ProfileManage-container container" style={{ position: 'relative' }}>
-            <div className='ProfileManage-container-parti' style={{ position: 'absolute', zIndex: '1' }}>
+            <div className="ProfileManage-container-parti" style={{ position: 'absolute', zIndex: 1 }}>
                 <Particles1 />
             </div>
-            <div className="ProfileManage-body container-fluid" style={{ position: 'relative',zIndex:'100',marginTop:'100px', width:'70%' }}>
-                <form onSubmit={handleUpdate} >
-                    <MDBRow className='mb-4'>
+            <div className="ProfileManage-body container-fluid" style={{ position: 'relative', zIndex: 100, marginTop: '100px', width: '70%' }}>
+                <form onSubmit={handleUpdate}>
+                    <MDBRow className="mb-4">
                         <MDBCol>
                             <MDBInput
-                                id='form6Example1'
-                                label='Full name'
+                                id="fullname"
+                                label="Full Name"
                                 value={fullname}
                                 onChange={(event) => setFullname(event.target.value)}
+                                required
                             />
                         </MDBCol>
                     </MDBRow>
 
-                    <MDBInput
-                        wrapperClass='mb-4'
-                        id='form6Example3'
-                        value={email}
-                        label='Your Email'
-                        onChange={(event) => setEmail(event.target.value)}
-                    />
-                    <MDBInput
-                        wrapperClass='mb-4'
-                        id='form6Example3'
-                        value={gender}
-                        label='Gender'
-                        onChange={(event) => setGender(event.target.value)}
-                    />
-                    <MDBInput
-                        wrapperClass='mb-4'
-                        id='form6Example3'
-                        value={role}
-                        label='Role'
-                        onChange={(event) => setRole(event.target.value)}
-                        disabled
-                    />
-                    <MDBInput
-                        wrapperClass='mb-4'
-                        id='form6Example3'
-                        value={phoneNumber}
-                        label='Phone number'
-                        onChange={(event) => setPhoneNumber(event.target.value)}
-                    />
+                    <MDBRow className="mb-4">
+                        <MDBCol>
+                            <MDBInput
+                                id="email"
+                                label="Email"
+                                type="email"
+                                value={email}
+                                onChange={(event) => setEmail(event.target.value)}
+                                required
+                            />
+                        </MDBCol>
+                    </MDBRow>
 
-                    {error && <div className="error-message">{error}</div>}
+                    <MDBRow className="mb-4">
+                        <MDBCol>
+                            <MDBInput
+                                id="gender"
+                                label="Gender"
+                                value={gender}
+                                onChange={(event) => setGender(event.target.value)}
+                                required
+                            />
+                        </MDBCol>
+                    </MDBRow>
 
-                    <MDBBtn className='mb-4' type='submit' block disabled={loading}>
-                        {loading ? 'Updating...' : 'Update information'}
+                    <MDBRow className="mb-4">
+                        <MDBCol>
+                            <MDBInput
+                                id="role"
+                                label="Role"
+                                value={role}
+                                disabled
+                            />
+                        </MDBCol>
+                    </MDBRow>
+
+                    <MDBRow className="mb-4">
+                        <MDBCol>
+                            <MDBInput
+                                id="phone"
+                                label="Phone Number"
+                                value={phoneNumber}
+                                onChange={(event) => setPhoneNumber(event.target.value)}
+                                required
+                            />
+                        </MDBCol>
+                    </MDBRow>
+
+                    {error && <div className="alert alert-danger">{error}</div>}
+
+                    <MDBBtn type="submit" block disabled={loading}>
+                        {loading ? 'Updating...' : 'Update Information'}
                     </MDBBtn>
                 </form>
             </div>
-
         </div>
     );
-}
+};
 
 export default ProfileManage;
