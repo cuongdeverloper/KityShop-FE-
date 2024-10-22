@@ -211,7 +211,70 @@ const updateProductByProductId = async (productId, productDetails) => {
         throw error;
     }
 };
+const createOrder = async (orderData) => {
+    try {
+        const token = Cookies.get('accessToken'); // Retrieve the token from cookies
 
+    if (!token) {
+        throw new Error('No token found, please log in.');
+    }
+        // Assuming your API endpoint is '/api/orders' (adjust as necessary)
+        const response = await axios.post('/v1/api/createOrder', orderData, {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+            }
+        });
+        return response
+    } catch (error) {
+        console.error('Error creating order:', error);
+        // You might want to return an error object to handle it in your component
+        return { errorCode: 1, message: error.response ? error.response.data.message : 'Error occurred while creating the order' };
+    }
+};
+const apiAdmGetAllOrders = async()=>{
+    try {
+        const token = Cookies.get('accessToken'); // Retrieve the token from cookies
+
+    if (!token) {
+        throw new Error('No token found, please log in.');
+    }
+        // Assuming your API endpoint is '/api/orders' (adjust as necessary)
+        const response = await axios.get('/v1/api/getAllOrder', {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+            }
+        });
+        return response
+    } catch (error) {
+        console.error('Error get order:', error);
+        // You might want to return an error object to handle it in your component
+        return { errorCode: 1, message: error.response ? error.response.data.message : 'Error occurred while creating the order' };
+    }
+}
+const apiAdmUpdateOrder = async (orderId, updateData) => {
+    try {
+        const token = Cookies.get('accessToken'); 
+
+        if (!token) {
+            throw new Error('No token found, please log in.');
+        }
+        
+        // Assuming your API endpoint is '/api/orders/update' (adjust as necessary)
+        const response = await axios.put(`/v1/api/updateOrder/${orderId}`, updateData, {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+            }
+        });
+        return response
+    } catch (error) {
+        console.error('Error updating order:', error);
+        // Return an error object to handle it in your component
+        return { errorCode: 1, message: error.response ? error.response.data.message : 'Error occurred while updating the order' };
+    }
+};
 export {
     LoginApi,RegisterApi,
     UpdateUserApi,
@@ -219,5 +282,6 @@ export {
     getProductByCategoryApi,
     getProductByProductId,loginWGoogle,decodeDataGoogle,getCartForUser,
     addProductToCart,deleteDetailCart,searchHomepageByCategory,getAllCategoryHomePage,
-    GetUserPaginateApi,updateUserApi,deleteUserApi,getListCategoriesApi,deleteProductByIdApi,updateProductByProductId
+    GetUserPaginateApi,updateUserApi,deleteUserApi,getListCategoriesApi,deleteProductByIdApi,
+    updateProductByProductId,createOrder,apiAdmGetAllOrders,apiAdmUpdateOrder
 }

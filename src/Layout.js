@@ -17,6 +17,7 @@ import Product from "./components/Products/Product/Product"
 import AdminManageProduct from "./components/Admin/Product/AdminManageProduct";
 import AdminManageUser from "./components/Admin/User/AdminManageUser";
 import AdminAddProduct from "./components/Admin/Product/AdminAddProduct";
+import AdminOrder from "./components/Admin/Order/AdminOrder";
 const Layout = () => {
     return (
         <>
@@ -45,8 +46,9 @@ const Layout = () => {
                             </PrivateRoute>} >
                             <Route path="Product" element={<AdminManageProduct />} />
                             <Route path="User" element={<AdminManageUser />} />
+                            <Route path="Order" element={<AdminOrder />} />
                             <Route path="Product/:category" element={<AdminAddProduct />} />
-
+                                
                         </Route>
 
                         <Route path="/user" element={<User />}>

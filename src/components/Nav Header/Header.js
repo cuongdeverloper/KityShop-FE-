@@ -15,7 +15,7 @@ const Header = () => {
     const isAuthenticated = useSelector(state => state.user.isAuthenticated);
     const navigate = useNavigate();
     const cart1 = useSelector(state => state.cart);  // Adjust according to your state structure
-
+    const role = useSelector(state => state.user.account.role)
 
     return (
         <div className="Header-container" style={{zIndex:'1000',width:'100%'}}>
@@ -51,6 +51,9 @@ const Header = () => {
                             <Nav.Link href="#home">
                                 <GoSearch />
                             </Nav.Link>
+                            {role === 'Admin' &&  <Nav.Link onClick={() => navigate('/AdmManager')}>
+                                AdminManage
+                            </Nav.Link>}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

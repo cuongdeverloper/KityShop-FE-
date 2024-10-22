@@ -86,7 +86,7 @@ const SideBar = (props) => {
                                 <Link to='Product' className='nav-link'>Product</Link>
                             </MenuItem>
                             <MenuItem>
-                                <Link to='manage-question' className='nav-link'>Item6</Link>
+                                <Link to='Order' className='nav-link'>Order</Link>
                             </MenuItem>
                         </SubMenu>
 
