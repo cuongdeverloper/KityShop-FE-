@@ -1,4 +1,4 @@
-import { Fetch_User_Success } from "../action/userAction";
+import { Fetch_User_Success, Fetch_User_Success_Google } from "../action/userAction";
 import { Fetch_User_LogOut } from "../action/userAction";
 const INITIAL_STATE = {
     account: {
@@ -29,6 +29,16 @@ const userReducer = (state = INITIAL_STATE, action) => {
                     role: action.payload.role,
                     phoneNumber: action.payload.phoneNumber,
                     gender: action.payload.gender
+                },
+                isAuthenticated: true,
+            };
+            case Fetch_User_Success_Google:
+            return {
+                ...state,
+                account: {
+                    ...state.account,
+                    ...action.payload, 
+                   
                 },
                 isAuthenticated: true,
             };

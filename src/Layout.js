@@ -18,6 +18,7 @@ import AdminManageProduct from "./components/Admin/Product/AdminManageProduct";
 import AdminManageUser from "./components/Admin/User/AdminManageUser";
 import AdminAddProduct from "./components/Admin/Product/AdminAddProduct";
 import AdminOrder from "./components/Admin/Order/AdminOrder";
+import AuthCallback from "./components/AuthCallback";
 const Layout = () => {
     return (
         <>
@@ -38,6 +39,7 @@ const Layout = () => {
                     <Routes>
                         <Route path="/" element={<HomePage />} />
                         <Route path="/login" element={<Login />} />
+                        <Route path="auth/callback" element={<AuthCallback />} />
                         <Route path="/register" element={<Register />} />
                         <Route path="/logout" element={<Logout />} />
                         <Route path="/AdmManager" element={
