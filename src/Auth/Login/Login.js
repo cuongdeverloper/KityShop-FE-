@@ -79,7 +79,7 @@ const Login = () => {
     }, [email, password, confirm]);
 
     const redirectGoogleLogin = () => {
-        window.location.href = "http://localhost:3000/auth/google";
+        window.location.href = "https://kittyshop-be.onrender.com/auth/google";
     };
 
     return (
